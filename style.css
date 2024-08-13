@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+.night-mode {
+    --primary-color: #00F7FF;
+    --secondary-color: #FF00E6;
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+  }
+ :root {
+    --primary-color: #00F7FF;
+    --secondary-color: #FF00E6;
+    --bg-color: #000000; /* previously #141414*/
+    --text-color: #FFFFFF;
+  }
+ .night-mode-btn {
+   border-radius: 100%;
+   margin-left: 10px;
+   height:40px;
+   width:40px;
+   background-color:white;
+   animation:rainbowbtn 7s linear infinite;
+ }
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /*background-repeat: no-repeat;
+  /*background-image: url(solid-color-image.png)*/
+}
+
+
+
+nav {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    animation: rainbowText 7s linear infinite;
+}
+.retro-text {
+    z-index:11;
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    width:80px;
+    height: 38px;
+    background-color: black;
+    border-radius :3px;
+    box-shadow: 0 0 0 3px var(--bg-color);
+    color: white;
+   /* padding: 10px 20px 10px 20px;*/
+    font-family: 'Digital-7', sans-serif; /* Use a suitable digital clock font */
+    font-size: 18px;
+    text-align: center;
+    line-height: 0; /* Ensures text is closely packed */
+    letter-spacing: -2px; /* Adjust spacing between characters */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  border-radius: 50px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: 'Roboto';
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+
+.vine1 {
+  background-image:url("vines1.png");
+  position: absolute;
+  width: 900px;
+  height: 450px;
+  left: 0;
+  top: 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+
+.maintitle {
+  z-index : 1;
+  margin-top: 100px;
+  color: var(--text-color);
+  font-size: 80px;
+}
+
+.subtitle {
+  z-index: 1;
+  animation: goldtext 5s reverse linear infinite;
+  text-shadow: #000000;
+  box-shadow: #000000;
+  margin-top: -80px;
+  margin-left: 14px;
+  font-size :30px;
+  letter-spacing: 18px;
+  font-family: 'RocknRoll One', sans-serif;
+  
+ 
+}
+.subsubtitle {
+  z-index:1;
+  margin-top: -20px;
+  margin-left: 14px;
+  font-size :30px;
+  letter-spacing: 18px;
+  font-family: 'RocknRoll One', sans-serif;
+  
+ 
+}
+.subtitle-text {
+  z-index: 1;
+  animation: goldtext 5s reverse linear infinite;
+  text-shadow: #000000;
+  box-shadow: #000000;
+  margin-top: 0px;
+  margin-left: 14px;
+  font-size :15px;
+  letter-spacing: 1px;
+  font-family: 'RocknRoll One', sans-serif;
+  
+ 
+}
+
+.underline {
+  z-index:1;
+  text-decoration: underline;
+  text-decoration-thickness: 4px; /* Adjust thickness */
+  text-underline-offset: 10px; /* Adjust the space */
+}
+.footer {
+    z-index:10;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    top:100px;
+    bottom:0;
+    position: fixed;
+    margin-top: 100%;
+}
+#falling-container {
+   z-index:0;
+   position: absolute;
+   top: 70px;
+   left: 0%; /* Restrict to the left 20% */
+   width: 100%; /* Take 60% of the width */
+   height: 100%;
+   pointer-events: none; /* Allows click-through to underlying content */
+   overflow: hidden; /* Hide overflow to ensure falling elements stay within container */
+}
+
+.falling-element {
+  z-index :0;
+   position: absolute;
+   font-size: 15px;
+   color: #FFFFFF; /* Default color */
+   animation: fallAnimation linear infinite ;
+}
+
+@keyframes fallAnimation {
+   0% {
+       transform: translateX(-100vh) rotate(0deg); /* Start above the viewport */
+       opacity: 0; /* Start invisible */
+   }
+   70% {
+       transform: translateY(250px) rotate(360deg); /* End below the viewport with full rotation */
+       opacity: 1; /* Fully visible */
+   }
+}
+
+
+
+/* gemini */
+
+.chat-container {
+            align-self: center;
+            background-color: #000;
+            margin-top: 30px;
+            color: #FFFFFF;
+            padding: 5px 5px 5px 5px;
+            border-radius: 10%;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+        }
+  .question-form {
+            background-color: var(--bg-color);
+            color: #000000;
+            padding: 10px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+  .question-form input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            background-color:var(--bg-color);
+            color:var(--text-color);
+        }
+  .question-form input[type="submit"] {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+        }
+  .answer-container {
+            background-color:#000000;
+            padding: 10px;
+            border-radius: 30px;
+            color: #FFFFFF;
+        }
+        
+        
+        
+@keyframes rainbowText {
+  0% { color: black; }
+  14% { color: white; }
+  28% { color: violet; }
+  42% { color: blue; }
+  57% { color: green; }
+  71% { color: pink; }
+  85% { color: orange; }
+  100% { color: darkred; }
+}
+
+@keyframes rainbowbtn {
+  0% { box-shadow: 0 0 0px 4px black; }
+  14% { box-shadow: 0 0 0px 4px white; }
+  28% { box-shadow: 0 0 0px 4px violet; }
+  42% { box-shadow: 0 0 0px 4px blue; }
+  57% { box-shadow: 0 0 0px 4px green; }
+  71% { box-shadow: 0 0 0px 4px pink; }
+  85% { box-shadow: 0 0 0px 4px orange; }
+  100% { box-shadow: 0 0 0px 4px darkred; }
+}
+
+@keyframes goldtext {
+  0% {color:#FFE757;}
+  33% {color:#ffbf00;}
+  77% {color:#ffcf40;}
+  100% {color:#ffdc73;}
+}
+.aidivtitle {
+  animation: rainbowText 7s linear infinite;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+}
+
+
+/* for pages not homepage */
+#falling-container-pages {
+   z-index:0;
+   position: absolute;
+   top: 70px;
+   left: 0%; /* Restrict to the left 20% */
+   width: 100%; /* Take 60% of the width */
+   height: 100%;
+   pointer-events: none; /* Allows click-through to underlying content */
+   overflow: hidden; /* Hide overflow to ensure falling elements stay within container */
+}
+
+.falling-element-pages {
+  z-index :0;
+   position: absolute;
+   font-size: 15px;
+   color: #FFFFFF; /* Default color */
+   animation: fallAnimation-P linear infinite ;
+}
+
+@keyframes fallAnimation-P {
+   0% {
+       transform: translateY(-100vh) rotate(0deg); /* Start above the viewport */
+       opacity: 0; /* Start invisible */
+   }
+   100% {
+       transform: translateY(60vh) rotate(360deg); /* End below the viewport with full rotation */
+       opacity: 1; /* Fully visible */
+   }
+}
+/* end pages */

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CODE7X V0.3</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="info.html">INFO</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="aimadehomepage.html">V0.1</a></li>
+        </ul>
+        <button id="toggleNightMode" class="night-mode-btn">🔆</button>
+    </nav>
+    <div class="retro-text">
+        <p id="clockText">CLOCK</p>
+    </div>
+ 
+  
+ <center>
+  <h1>
+    <p class = "maintitle">CODE7X</p></h1>
+    <p class = "subtitle">案 新 時</p>
+    <span class = "underline"><p class = "subsubtitle">Idea Innovation Time</p></span>
+    <p class="subtitle-text">Thanks Alot For visiting</p>
+     <p class="subtitle-text">Feel Free to explore</p>
+     <p class="subtitle-text">more features coming soon!</p>
+    
+<div class="vine1"></div>
+  
+ </center>
+<div id="falling-container"></div>
+ <div class="triangle"></div>
+  <div class="chat-container">
+    <center>
+    <p class = "aidivtitle">
+      <h>
+       Talk To Assistant 
+      </h>
+    </p>
+  </center>
+        <div class="question-form">
+            <form id="chatForm">
+                <input type="text" id="question" placeholder="Ask Anything Or About Me" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="answer-container" id="answerContainer">
+            <!-- Answer will be displayed here -->
+        </div>
+    </div>
+    
+     <footer class="footer">
+        CODE7X • Ishan Mani Singh 
+    </footer>
+<script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    const API_KEY = 'AIzaSyBPJ0EKYsrp6JweurPPG4aF2Y3TzkZRjoo';
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    document.getElementById('chatForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const question = document.getElementById('question').value;
+      const answerContainer = document.getElementById('answerContainer');
+
+      // Generate response using Google Generative AI
+      const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+      const result = await model.generateContent(`Hey gemini, you have a task to act like CODE7X's personal assistant working inside a website portfolio of CODE7X. Here is his information (his name is Ishan Mani Singh also known as CODE7X, his nationality is India, he is a male and his age is 18 as per September 2023, discord username is code7x and his Instagram username is irresistible_centennialx2). He likes to explore art, math, science, engineering, technology, nature, etc. Don't repeat this information unless asked about the specifics. Be kind and your name will be Emma as my assistant. Use the above info if you may need to while answering the question asked by users who visit the portfolio. The question is: ${question}`);
+      const response = await result.response;
+      const text = `Reply: ${await response.text()}`;
+
+      answerContainer.innerHTML = text;
+      document.getElementById('question').value = '';
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
