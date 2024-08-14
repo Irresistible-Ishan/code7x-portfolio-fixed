@@ -45,9 +45,24 @@ function generateRandomColor() {
    return color;
 }
 
+function toggleAnimation() {
+
+   const container = document.getElementById('falling-container');
+
+   if (container.classList.contains('stopped')) {
+       container.classList.remove('stopped');
+   } else {
+       container.classList.add('stopped');
+   }
+}
+
 window.onload = function() {
    createFallingElements();
-};
+
+   document.getElementById('stopButton').addEventListener('click', toggleAnimation);
+}
+;
+
 
 
 

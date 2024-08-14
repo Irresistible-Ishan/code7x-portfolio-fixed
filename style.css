@@ -173,18 +173,7 @@ li a:hover {
   text-decoration-thickness: 4px; /* Adjust thickness */
   text-underline-offset: 10px; /* Adjust the space */
 }
-.footer {
-    z-index:10;
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    top:100px;
-    bottom:0;
-    position: fixed;
-    margin-top: 100%;
-}
+
 #falling-container {
    z-index:0;
    position: absolute;
@@ -215,21 +204,24 @@ li a:hover {
    }
 }
 
-
+.stopped .falling-element {
+   animation-play-state: paused;
+}
 
 /* gemini */
 
 .chat-container {
-            align-self: center;
             background-color: #000;
-            margin-top: 30px;
             color: #FFFFFF;
             padding: 5px 5px 5px 5px;
             border-radius: 10%;
             width: 400px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            justify-content: center;
             align-items: center;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
         }
   .question-form {
             background-color: var(--bg-color);

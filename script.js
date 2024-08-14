@@ -1,4 +1,4 @@
-const NUM_ELEMENTS = 300; 
+const NUM_ELEMENTS = 200; 
 
 function createFallingElements() {
    const container = document.getElementById('falling-container');
@@ -15,7 +15,7 @@ function createFallingElements() {
        const content = generateRandomContent();
        element.textContent = content;
 
-       element.style.color = generateRandomColor();
+       element.style.color = "#FFFFFF"; /*generateRandomColor();*/
 
        container.appendChild(element);
    }
@@ -44,9 +44,19 @@ function generateRandomColor() {
    }
    return color;
 }
+function toggleAnimation() {
+   const container = document.getElementById('falling-container');
+   if (container.classList.contains('stopped')) {
+       container.classList.remove('stopped');
+   } else {
+       container.classList.add('stopped');
+   }
+}
 
 window.onload = function() {
    createFallingElements();
+
+   document.getElementById('stopButton').addEventListener('click', toggleAnimation);
 };
 
 
