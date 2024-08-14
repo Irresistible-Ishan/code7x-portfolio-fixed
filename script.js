@@ -82,3 +82,13 @@ document.getElementById('toggleNightMode').addEventListener('click', function() 
     this.textContent = '🔆';
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var chatButton = document.querySelector('.chat-button');
+    var chatContainer = document.querySelector('.chat-container');
+
+    chatButton.addEventListener('click', function() {
+        chatContainer.classList.toggle('hidden');
+    });
+});
