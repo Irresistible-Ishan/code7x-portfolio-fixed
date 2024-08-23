@@ -1,4 +1,4 @@
-const NUM_ELEMENTS = 200; 
+const NUM_ELEMENTS = 300; 
 
 function createFallingElements() {
    const container = document.getElementById('falling-container');
@@ -15,7 +15,7 @@ function createFallingElements() {
        const content = generateRandomContent();
        element.textContent = content;
 
-       element.style.color = "#FFFFFF"; /*generateRandomColor();*/
+       element.style.color = generateRandomColor();
 
        container.appendChild(element);
    }
