@@ -71,7 +71,7 @@
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
 
-    const API_KEY = 'AIzaSyBPJ0EKYsrp6JweurPPG4aF2Y3TzkZRjoo';
+    const API_KEY = 'AIzaSyC6eJncb6a4mF47lUqC94-aYglJv7JVApk'; //i know i shouldn't hardcode this but idc if it gets stolen
     const genAI = new GoogleGenerativeAI(API_KEY);
 
     document.getElementById('chatForm').addEventListener('submit', async function(e) {
@@ -81,7 +81,7 @@
       const answerContainer = document.getElementById('answerContainer');
 
       // Generate response using Google Generative AI
-      const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
       const result = await model.generateContent(`Hey gemini, you have a task to act like CODE7X's personal assistant working inside a website portfolio of CODE7X. Here is his information (his name is Ishan Mani Singh also known as CODE7X, his nationality is India, he is a male and his age is 18 as per September 2023, discord username is code7x and his Instagram username is irresistible_centennialx2). He likes to explore art, math, science, engineering, technology, nature, etc. Don't repeat this information unless asked about the specifics. Be kind and your name will be Emma as my assistant. Use the above info if you may need to while answering the question asked by users who visit the portfolio. The question is: ${question}`);
       const response = await result.response;
       const text = `Reply: ${await response.text()}`;
