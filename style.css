@@ -356,6 +356,84 @@ li a:hover {
    100% {
        transform: translateY(60vh) rotate(360deg); /* End below the viewport with full rotation */
        opacity: 1; /* Fully visible */
+    
    }
+@keyframes discoGlow {
+    0% { box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080; }
+    25% { box-shadow: 0 0 10px #ff8000, 0 0 20px #ff8000, 0 0 30px #ff8000; }
+    50% { box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; }
+    75% { box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+    100% { box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080; }
 }
-/* end pages */
+
+@keyframes discoBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glitter {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-50px) scale(0.5); }
+}
+
+.disco-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff);
+    background-size: 400% 400%;
+    animation: discoBackground 3s infinite linear, discoGlow 1.5s infinite ease-in-out;
+}
+
+/* Glowing effect on hover */
+.disco-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #fff, 0 0 25px rgba(255, 0, 128, 0.8);
+}
+
+/* Pressing effect */
+.disco-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 35px rgba(255, 0, 128, 0.9);
+}
+
+/* Glitter Particles */
+.disco-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+    opacity: 0;
+    animation: glitter 1s infinite;
+}
+
+/* More particles appearing on click */
+.disco-button:active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0) 50%);
+    opacity: 0.8;
+    transform: scale(1.5);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+  
