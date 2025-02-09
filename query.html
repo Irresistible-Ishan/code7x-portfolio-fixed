@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 
     <style>
-        /* Fix navigation bar */
+        
         nav {
             position: fixed;
             top: 0;
@@ -46,7 +46,7 @@
             background: #222;
         }
 
-        /* Inquiry Form Styling */
+        
         body {
             background-color: #121212;
             color: white;
@@ -57,7 +57,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            padding-top: 60px; /* Prevents nav overlap */
+            padding-top: 60px;
         }
 
         .form-container {
@@ -101,7 +101,7 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    
     <nav>
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -115,20 +115,20 @@
         </div>
     </nav>
 
-    <!-- Inquiry Form -->
+    
     <div class="form-container">
         <h2>Contact Me</h2>
         <form id="contactForm">
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="text" id="contact" placeholder="Your Contact Info" required>
             <textarea id="query" placeholder="Your Inquiry" required></textarea>
-            <button type="submit">Send</button>
+            <button type="submit" class="disco-button>Send</button>
         </form>
     </div>
 
     <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevents the default form submission
+            event.preventDefault(); 
 
             const webhookURL = "https://discord.com/api/webhooks/1338243702333636618/1FV-xhpl1Fn0zQbWT_Rxexy9tnGnpfFOX26ECoc1IeeQqEF_thlX_P6LGoB2LQYP-h1m"; // Replace with your webhook URL
 
