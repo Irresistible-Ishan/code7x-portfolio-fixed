@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            width: 300px;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #7289da;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #5b6eae;
+        }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <h2>Contact Me</h2>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="contact" placeholder="Your Contact Info" required>
+        <textarea id="query" placeholder="Your Query" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            const webhookURL = "https://discord.com/api/webhooks/1338243702333636618/1FV-xhpl1Fn0zQbWT_Rxexy9tnGnpfFOX26ECoc1IeeQqEF_thlX_P6LGoB2LQYP-h1m"; // Replace with your webhook URL
+
+            const name = document.getElementById("name").value;
+            const contact = document.getElementById("contact").value;
+            const query = document.getElementById("query").value;
+
+            const payload = {
+                "content": `**New Contact Form Submission**\n**Name:** ${name}\n**Contact:** ${contact}\n**Query:** ${query}`
+            };
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Form submitted successfully!");
+                } else {
+                    alert("Error sending message.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred.");
+            });
+        });
+    </script>
+</body>
+</html>
