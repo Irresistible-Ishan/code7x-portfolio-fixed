@@ -7,10 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ishan Mani Singh</title>
 	<link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/fixedsys-excelsior">
 
+</head>
 
 <body>
     <nav>
@@ -18,7 +21,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="info.html">INFO</a></li>
             <li><a href="projects.html">PROJECTS</a></li>
-	    <li><a href="query.html">INQUIRY</a></li>
+	         <!-- <li><a href="query.html">INQUIRY</a></li> -->
         </ul>
         <button id="toggleNightMode" class="night-mode-btn">🔆</button>
         <button id="stopButton" class="night-mode-btn">🍀</button>
@@ -34,20 +37,22 @@
     <p class = "maintitle">CODE7X</p></h1>
     <p class = "subtitle">案 新 時</p>
     <span class = "underline"><p class = "subsubtitle">Idea Innovation Time</p></span>
-    <p class="subtitle-text">Handcrafted With Love , Inspired By Nature
-
-	    STATUS : THE SITE IS NOT FULLY CONSTRUCTED YET, BUT FEEL FREE TO EXPLORE EXISTING FEATURES.
-	    It will be made functional soon by the end of 2025 hopefully so stay tuned. 
-	    Alot of exciting stuff coming up!
-
-
-</p>
+    <p class="subtitle-text">Handcrafted With Love , Inspired By Nature</p>
     
 <div class="vine1"></div>
 
  </center>
 <div id="falling-container"></div>
-  <div class="chat-container">
+<div class="mainpagediv">
+  <p class="mainpagetext">
+I move through ideas the way light moves through a room — touching things, changing them slightly, never staying still. I build to understand, and I understand by breaking what I build. Some days that means code, some days shapes, symbols, systems, or questions that don’t resolve quickly. I’m not trying to arrive anywhere fast; I’m interested in what reveals itself when I stay with an idea long enough. Whatever I make is just a trace of that process — imperfect, evolving, honest.
+  </p>
+  <p class="mainpagetext">
+    My name is Ishan Mani Singh. I also go by CODE7X, a name that grew out of curiosity rather than intention — a marker for experiments, systems, and unfinished ideas. Both point to the same thing: a person still learning, still observing, still shaping thought into form, one piece at a time.
+  </p>
+</div>
+
+<div class="chat-container">
     <center>
     <p class = "aidivtitle">
       <h>
@@ -62,7 +67,6 @@
             </form>
         </div>
         <div class="answer-container" id="answerContainer">
-            <!-- Answer will be displayed here -->
         </div>
     </div>
   <button class="chat-button">👩</button>
@@ -76,7 +80,8 @@
   <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
 
-    const API_KEY = 'AIzaSyC6eJncb6a4mF47lUqC94-aYglJv7JVApk'; //i know i shouldn't hardcode this but idc if it gets stolen
+    const API_KEY = 'AIzaSyARNcnY-h5TJxZQSAh3LuL2w_0aFEycmPg'; 
+    //i know i shouldn't hardcode this but idc if it gets stolen
     const genAI = new GoogleGenerativeAI(API_KEY);
 
     document.getElementById('chatForm').addEventListener('submit', async function(e) {
@@ -86,8 +91,8 @@
       const answerContainer = document.getElementById('answerContainer');
 
       // Generate response using Google Generative AI
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
-      const result = await model.generateContent(`Hey gemini, you have a task to act like CODE7X's personal assistant working inside a website portfolio of CODE7X. Here is his information (his name is Ishan Mani Singh also known as CODE7X, his nationality is India, he is a male and his age is 18 as per September 2023, discord username is code7x or code_0057 (subject to change) and his Instagram username is fractalx2005 (subject to change). He likes to explore art, math, science, engineering, technology, nature, etc , basically somewhat of a scientist or a polymath . Don't repeat this information unless asked about the specifics. Be kind and your name will be R-ZE02 as my assistant. Use the above info if you may need to while answering the question asked by users who visit the portfolio. The question is: ${question}`);
+      const model = genAI.getGenerativeModel({ model: "gemma-3-27b-it" });
+      const result = await model.generateContent(`Hey gemini, you have a task to act like CODE7X's personal assistant working inside a website portfolio of CODE7X. Here is his information (his name is Ishan Mani Singh also known as CODE7X, his nationality is India, he is a male and his age is 20 as per September 2025, discord username is code_0057 (subject to change) and his Instagram username is fractalx7 (subject to change). He likes to explore art, math, science, engineering, technology, nature, etc , basically somewhat of a scientist or a polymath in making . Don't repeat this information unless asked about the specifics. Be kind and your name will be R-ZE02 as my assistant. Use the above info if you may need to while answering the question asked by users who visit the portfolio. The question is: ${question}`);
       const response = await result.response;
       const text = `Reply: ${await response.text()}`;
 

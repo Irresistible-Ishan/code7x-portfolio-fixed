@@ -5,12 +5,14 @@
     --secondary-color: #FF00E6;
     --bg-color: #FFFFFF;
     --text-color: #000000;
+    --invert-img: 1;
   }
  :root {
     --primary-color: #00F7FF;
     --secondary-color: #FF00E6;
     --bg-color: #000000; /* previously #141414*/
     --text-color: #FFFFFF;
+    --invert-img: 0;
   }
  .night-mode-btn {
    border-radius: 100%;
@@ -119,9 +121,7 @@ li a:hover {
   top: 0px;
   background-size: contain;
   background-repeat: no-repeat;
-  
 }
-
 
 .maintitle {
   z-index : 1;
@@ -203,6 +203,42 @@ li a:hover {
        opacity: 1; /* Fully visible */
    }
 }
+/*----------------------------------------------*/
+/*----this code is written on 27 12 2025 by me----*/
+.mainpagediv {
+  background-image: url("starlocbg.jpg");
+  background-size:cover;
+  filter:invert(var(--invert-img));
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  height: 700px ;
+  width: auto;
+  margin-left: 70px;
+  margin-right:70px;
+  padding: 30px;
+}
+.mainpagetext {
+  color :var(--bg-color);
+  font-family: 'DotGothic16', monospace ;
+  font-size: 25px;
+  letter-spacing: 5px;
+  line-height: 30px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+}
+.mainpagetext:hover {
+  color: var(--text-color);
+  background-color: #000;
+  animation: maintextani 1.2s ease-in forwards;
+}
+
+@keyframes maintextani {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/*----------------------------------------------*/
 
 .stopped .falling-element {
    animation-play-state: paused;
@@ -431,7 +467,7 @@ li a:hover {
     left: 50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0) 50%);
+    background: radial-gradient(circle, rgba(250, 42, 42, 0.8) 10%, rgba(255,255,255,0) 50%);
     opacity: 0.8;
     transform: scale(1.5);
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
