@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Ishan Mani Singh | CODE7X - Admin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Admin Access</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+.admin-panel {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: Orbitron;
+}
+
+.upload-box {
+    border: 2px dashed #00ffcc;
+    padding: 30px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.upload-box.hover {
+    background: rgba(0,255,204,0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    background: black;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+    padding: 10px;
+}
+
+.send-btn {
+    margin-top: 15px;
+    padding: 10px 30px;
+    background: black;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+    cursor: pointer;
+}
+
+.progress-container {
+    width: 100%;
+    background: #111;
+    height: 10px;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 10px;
+    background: #00ffcc;
+    transition: width 0.2s;
+}
+
+#statusText {
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="info.html">INFO</a></li>
+<li><a href="projects.html">PROJECTS</a></li>
+<li><a href="admin.html">ADMIN ACCESS</a></li>
+</ul>
+</nav>
+
+<center>
+<h1 class="maintitle">ADMIN</h1>
+<p class="subtitle">Control. Hack. Observe.</p>
+</center>
+
+<section class="admin-panel">
+
+<div class="upload-box" id="dropZone">
+<p>DRAG & DROP FILES</p>
+<button id="selectFilesBtn">Select Files</button>
+<input type="file" id="fileInput" multiple hidden>
+</div>
+
+<textarea id="textInput" placeholder="Enter text message..."></textarea>
+
+<div class="progress-container">
+<div id="progressBar"></div>
+</div>
+
+<button class="send-btn" id="sendBtn">SEND</button>
+
+<div id="statusText"></div>
+
+</section>
+
+<script>
+/* ================= CONFIG ================= */
+const SERVER_URL = "https://floor-atomic-hood-patches.trycloudflare.com/upload";
+
+/* ================= ELEMENTS ================= */
+const dropZone     = document.getElementById("dropZone");
+const fileInput    = document.getElementById("fileInput");
+const selectBtn    = document.getElementById("selectFilesBtn");
+const sendBtn      = document.getElementById("sendBtn");
+const progressBar  = document.getElementById("progressBar");
+const statusText   = document.getElementById("statusText");
+const textInput    = document.getElementById("textInput");
+
+/* ================= FILE PICK ================= */
+selectBtn.onclick = () => fileInput.click();
+
+/* ================= DRAG & DROP ================= */
+dropZone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropZone.classList.add("hover");
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("hover");
+});
+
+dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.classList.remove("hover");
+    fileInput.files = e.dataTransfer.files;
+});
+
+/* ================= SEND DATA ================= */
+sendBtn.onclick = () => {
+    const formData = new FormData();
+
+    if (textInput.value.trim() !== "") {
+        formData.append("text", textInput.value);
+    }
+
+    for (const file of fileInput.files) {
+        formData.append("files", file);
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", SERVER_URL, true);
+
+    statusText.innerText = "IN PROCESS...";
+    statusText.style.color = "yellow";
+    progressBar.style.width = "0%";
+
+    xhr.upload.onprogress = e => {
+        if (e.lengthComputable) {
+            progressBar.style.width =
+                Math.round((e.loaded / e.total) * 100) + "%";
+        }
+    };
+
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            statusText.innerText = "✓ SENT";
+            statusText.style.color = "#00ffcc";
+            progressBar.style.width = "0%";
+            fileInput.value = "";
+            textInput.value = "";
+        } else {
+            statusText.innerText = "✗ SERVER ERROR";
+            statusText.style.color = "red";
+        }
+    };
+
+    xhr.onerror = () => {
+        statusText.innerText = "✗ NETWORK ERROR";
+        statusText.style.color = "red";
+    };
+
+    console.log("POST →", SERVER_URL);
+    xhr.send(formData);
+};
+</script>
+
+</body>
+</html>
