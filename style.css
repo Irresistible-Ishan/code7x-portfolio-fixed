@@ -10,7 +10,7 @@
  :root {
     --primary-color: #00F7FF;
     --secondary-color: #FF00E6;
-    --bg-color: #000000; /* previously #141414*/
+    --bg-color: #000000; 
     --text-color: #FFFFFF;
     --invert-img: 0;
   }
@@ -31,8 +31,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /*background-repeat: no-repeat;
-  /*background-image: url(solid-color-image.png)*/
 }
 
 
@@ -74,16 +72,13 @@ nav ul li a {
     border-radius :3px;
     box-shadow: 0 0 0 3px var(--bg-color);
     color: white;
-   /* padding: 10px 20px 10px 20px;*/
-    font-family: 'Digital-7', sans-serif; /* Use a suitable digital clock font */
+    font-family: 'Digital-7', sans-serif;
     font-size: 18px;
     text-align: center;
-    line-height: 0; /* Ensures text is closely packed */
-    letter-spacing: -2px; /* Adjust spacing between characters */
-    white-space: nowrap; /* Prevent text from wrapping */
+    line-height: 0; 
+    letter-spacing: -2px; 
+    white-space: nowrap; 
 }
-
-
 
 ul {
   list-style-type: none;
@@ -106,11 +101,9 @@ li a {
   text-decoration: 'Roboto';
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
 }
-
 
 .vine1 {
   background-image:url("vines1.png");
@@ -140,9 +133,8 @@ li a:hover {
   font-size :30px;
   letter-spacing: 18px;
   font-family: 'RocknRoll One', sans-serif;
-  
- 
 }
+
 .subsubtitle {
   z-index:1;
   margin-top: -20px;
@@ -150,9 +142,8 @@ li a:hover {
   font-size :30px;
   letter-spacing: 18px;
   font-family: 'RocknRoll One', sans-serif;
-  
- 
 }
+
 .subtitle-text {
   z-index: 1;
   animation: goldtext 5s reverse linear infinite;
@@ -163,48 +154,44 @@ li a:hover {
   font-size :15px;
   letter-spacing: 1px;
   font-family: 'RocknRoll One', sans-serif;
-  
- 
 }
 
 .underline {
   z-index:1;
   text-decoration: underline;
-  text-decoration-thickness: 4px; /* Adjust thickness */
-  text-underline-offset: 10px; /* Adjust the space */
+  text-decoration-thickness: 4px; 
+  text-underline-offset: 10px;
 }
 
 #falling-container {
    z-index:0;
    position: absolute;
    top: 70px;
-   left: 0%; /* Restrict to the left 20% */
-   width: 100%; /* Take 60% of the width */
+   left: 0%; 
+   width: 100%;
    height: 100%;
-   pointer-events: none; /* Allows click-through to underlying content */
-   overflow: hidden; /* Hide overflow to ensure falling elements stay within container */
+   pointer-events: none; 
+   overflow: hidden; 
 }
 
 .falling-element {
   z-index :0;
    position: absolute;
    font-size: 15px;
-   color: #FFFFFF; /* Default color */
+   color: #FFFFFF; 
    animation: fallAnimation linear infinite ;
 }
 
 @keyframes fallAnimation {
    0% {
-       transform: translateX(-100vh) rotate(0deg); /* Start above the viewport */
-       opacity: 0; /* Start invisible */
+       transform: translateX(-100vh) rotate(0deg); 
+       opacity: 0;
    }
    70% {
-       transform: translateY(250px) rotate(360deg); /* End below the viewport with full rotation */
-       opacity: 1; /* Fully visible */
+       transform: translateY(250px) rotate(360deg);
    }
 }
-/*----------------------------------------------*/
-/*----this code is written on 27 12 2025 by me----*/
+
 .mainpagediv {
   background-image: url("starlocbg.jpg");
   background-size:cover;
@@ -227,24 +214,70 @@ li a:hover {
   -moz-osx-font-smoothing: grayscale;
   font-smooth: never;
 }
+
 .mainpagetext:hover {
   color: var(--text-color);
   background-color: #000;
   animation: maintextani 1.2s ease-in forwards;
 }
 
+.main-content{
+  margin:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+  width:70%;
+  height:auto;
+  align-items: center;
+  background-color : white;
+  border-radius:50px;
+}
+.internal-main-content{
+  width:99%;
+  margin:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:8px;
+  margin-bottom:8px;
+  border-radius:50px;
+  height:auto;
+  background-color:black;
+  align-items: center;
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+.internal-main-content-title{
+  margin-top:20px;
+  color:white;
+  font-size:32px;
+  margin:0;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'Space Grotesk', sans-serif;
+
+}
+.internal-main-content-desc{
+  margin-top:20px;
+  color:white;
+  font-size:28px;
+  margin:0;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'Space Grotesk', sans-serif;
+  
+}
+
+
+
 @keyframes maintextani {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-/*----------------------------------------------*/
-
 .stopped .falling-element {
    animation-play-state: paused;
 }
-
-/* gemini */
 
 .chat-container {
             background-color: #000;
@@ -295,7 +328,8 @@ li a:hover {
         
 .hidden {
     display: block;
-} 
+}
+
 .chat-butttttton {
     z-index:1;
     position: fixed;
@@ -314,7 +348,7 @@ li a:hover {
     cursor: pointer;
 }
 
- .chat-button {
+.chat-button {
    z-index:3;
    position: fixed;
    bottom: 20px;
@@ -327,7 +361,7 @@ li a:hover {
    width:40px;
    background-color:white;
    animation:rainbowbtn 7s linear infinite;
- }
+}
         
 @keyframes rainbowText {
   0% { color: black; }
@@ -359,39 +393,36 @@ li a:hover {
 }
 .aidivtitle {
   animation: rainbowText 7s linear infinite;
-/*  font-family: 'Orbitron', sans-serif;*/
   font-size: 24px;
 }
 
-
-/* for pages not homepage */
 #falling-container-pages {
    z-index:0;
    position: absolute;
    top: 70px;
-   left: 0%; /* Restrict to the left 20% */
-   width: 100%; /* Take 60% of the width */
+   left: 0%; 
+   width: 100%; 
    height: 100%;
-   pointer-events: none; /* Allows click-through to underlying content */
-   overflow: hidden; /* Hide overflow to ensure falling elements stay within container */
+   pointer-events: none; 
+   overflow: hidden; 
 }
 
 .falling-element-pages {
   z-index :0;
    position: absolute;
    font-size: 15px;
-   color: #FFFFFF; /* Default color */
+   color: #FFFFFF; 
    animation: fallAnimation-P linear infinite ;
 }
 
 @keyframes fallAnimation-P {
    0% {
-       transform: translateY(-100vh) rotate(0deg); /* Start above the viewport */
-       opacity: 0; /* Start invisible */
+       transform: translateY(-100vh) rotate(0deg);
+       opacity: 0; 
    }
    100% {
-       transform: translateY(60vh) rotate(360deg); /* End below the viewport with full rotation */
-       opacity: 1; /* Fully visible */
+       transform: translateY(60vh) rotate(360deg); 
+       opacity: 1; 
     
    }
 @keyframes discoGlow {
@@ -432,19 +463,17 @@ li a:hover {
     animation: discoBackground 3s infinite linear, discoGlow 1.5s infinite ease-in-out;
 }
 
-/* Glowing effect on hover */
 .disco-button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px #fff, 0 0 25px rgba(255, 0, 128, 0.8);
 }
 
-/* Pressing effect */
+
 .disco-button:active {
     transform: scale(0.95);
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 35px rgba(255, 0, 128, 0.9);
 }
 
-/* Glitter Particles */
 .disco-button::before {
     content: "";
     position: absolute;
@@ -459,7 +488,7 @@ li a:hover {
     animation: glitter 1s infinite;
 }
 
-/* More particles appearing on click */
+
 .disco-button:active::after {
     content: "";
     position: absolute;
