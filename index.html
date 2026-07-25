@@ -21,7 +21,7 @@
             <li><a href="index.html">HOME</a></li>
             <li><a href="info.html">INFO</a></li>
             <li><a href="projects.html">PROJECTS</a></li>
-	         <li><a href="admin.html">ADMIN ACCESS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
         </ul>
         <button id="toggleNightMode" class="night-mode-btn">🔆</button>
         <button id="stopButton" class="night-mode-btn">🍀</button>
@@ -44,93 +44,14 @@
  </center>
 <div id="falling-container"></div>
 <div class="main-content">
-  <div class="internal-main-content">
-    <p class="internal-main-content-title">
-      <b>Introduction</b>
-    </p>
-    <p class="internal-main-content-desc">
-      My name is Ishan Mani Singh a fresher , Studying<br>
+    <div class="internal-main-content">
+      <p class="internal-main-content-desc">
+      My name is Ishan Mani Singh, second year '29 , Studying<br>
       Computer Science And Engineering (Datascience)<br>
       at Vellore Institute of Technology.<br><br>
     </p>
-    <p class="internal-main-content-title">
-      <b>My Journey in Tech & STEM</b>
-    </p>
-    <p class="internal-main-content-desc">
-      I've always been interested in Science and Technology<br>
-      This is one of the only things i can be involved in all day<br>
-      without realising how fast the time passed.<br>
-      from being intersted in theories like The Theory of Relativity and dimensions<br>
-      to actual mathematics on how it helps us genralise things, <br>
-      more over puzzles and aptitude was really interesting to me<br>
-      I would come up with my own problems and try to solve it<br>
-      or would go to random websites and solve puzzles<br>
-      but alot of problems required me to iterate things fast<br>
-      this is where coding come in for me.
-
-      <br><br>
-
-    </p>
-    <p class="internal-main-content-title">
-      <b>Programming</b>
-    </p>
-    <p class="internal-main-content-desc">
-      I have been coding since 2018 during Class 7th Middle-School,<br>
-      I started coding alot more from 2020<br>
-      and started with a very basic tech stack <br>
-      for webdev and projects involving math and logic , <br>
-      Python was a big part of it, I understood that it was really <br>
-      a good tool to bring ideas to reality and to solve <br>
-      computational based mathematics which cant be generalised directly<br>
-      and also to build Automation Scripts that automates<br>
-      boring manual tasks.<br><br>
-      I was also very interested in building BOTs and ChatBots<br> 
-      which help me do a task or interact with people on my behalf.
-      <br>mostly related to my own life, such as scraping websites for gathering content<br>
-      or making minecraft or discord based automation scripts to make my life easier<br>
-      or making automated server backup system to never loose any information.<br>
-      or playing with APIs and Hosting local servers.<br>
-      I was also interested in Ethical Hacking and Pentesting<br>
-      or finding general vulnerabilities or bugs to things<br>
-      as i realised how bad the real world security actually is<br>
-      and being truely secure is mathematically impossible.<br>
-      which lead me to develop interest in Cryptography<br>
-      by which i learned how encryption and other things works<br>
-      I tried to build my own private encryption and learned more about <br>
-      how encryptions have always existed from ceaser-cipher encryption<br>
-      to modern day officially accepted AES<br>
-      moreover to leading to need of quantum encryption.<br>
-      From cryptography and neuroscience i realised how information itself is an entity<br>
-      which can be taken as data and how studying it can give us different outcomes.
-      <br>This is where AIML and datascience comes in.<br><br>
-      </p>
-      <p class="internal-main-content-title">
-      <b>Artificial Intelligence</b>
-      </p>
-      <p class="internal-main-content-desc">
-     Later on, with Advancements in AI during the first release of CHATGPT in 2022 <br>
-     I was among the very first initial users of Dec 15 2022 model.<br>
-      I experimented with it day and night to get meaningful things out of it.<br>
-      I tried to always apply my coding knownledge in real world application.<br>
-      such as the time when there was no official API, <br>for OPENAI to access LLMs , 
-      I built a non profit for personal use only,<br>
-      On Screen Scraping system which worked as an api for my personal projects.
-      <br>I was finally able to make my automations more advance using it.<br>
-      I even got an offer from a gamedev company for this<br>
-      After this, when APIs were available but they were all paid.<br>
-      Opensorce local models didnt exist yet.<br>
-      Discord introduced a platform chatbot called "Clyde".<br>
-      which again was a huge opportunity for me as i used it as a free api<br>
-       by writing scraping code again totally for personal use and non profit.<br><br>
-    </p>
-    <p class="internal-main-content-title">
-      <b>Machine Learning</b>
-    </p>
-    <p class="internal-main-content-desc">
-      <br>
-    </p>
+    </div>
   </div>
-</div>
 
 <div class="chat-container">
     <center>
@@ -150,6 +71,19 @@
         </div>
     </div>
   <button class="chat-button">👩</button>
+  <footer> 
+    <p>
+      <form class="footer-form">
+        <p>Contact Form</p>
+          <label for="name" class="text-box">Name</label><br>
+          <input type="text" id="name" name="fname"><br>
+          <label for="email" class="text-box">Email ID</label><br>
+          <input type="text" id="email" name="lname"><br>
+          <label for="message" class="text-box">Message</label><br>
+          <input type="text" id="message" name="lname"><br>
+      </form>
+    </p>  
+  </footer> 
 <script type="importmap">
       {
         "imports": {
@@ -166,16 +100,12 @@
 
     document.getElementById('chatForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-
       const question = document.getElementById('question').value;
       const answerContainer = document.getElementById('answerContainer');
-
-      // Generate response using Google Generative AI
       const model = genAI.getGenerativeModel({ model: "gemma-3-27b-it" });
       const result = await model.generateContent(`Hey gemini, you have a task to act like CODE7X's personal assistant working inside a website portfolio of CODE7X. Here is his information (his name is Ishan Mani Singh also known as CODE7X, his nationality is India, he is a male and his age is 20 as per September 2025, discord username is code_0057 (subject to change) and his Instagram username is fractalx7 (subject to change). He likes to explore art, math, science, engineering, technology, nature, etc , basically somewhat of a scientist or a polymath in making . Don't repeat this information unless asked about the specifics. Be kind and your name will be R-ZE02 as my assistant. Use the above info if you may need to while answering the question asked by users who visit the portfolio. The question is: ${question}`);
       const response = await result.response;
       const text = `Reply: ${await response.text()}`;
-
       answerContainer.innerHTML = text;
       document.getElementById('question').value = '';
     });
