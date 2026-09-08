@@ -1,36 +1,135 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="CODE7X | Ishan Mani Singh - Portfolio Projects & Experiments">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-  	<link rel="stylesheet" href="style.css">
-  <title>Information Page.</title>
+  <title>CODE7X | Projects</title>
   
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Matching Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&family=Orbitron:wght@400;500;700&family=RocknRoll+One&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="info.html">INFO</a></li>
-            <li><a href="projects.html">PROJECTS</a></li>
-        </ul>
-        <button id="toggleNightMode" class="night-mode-btn">🔆</button>
-    </nav>
-    <div class="retro-text">
-        <p id="clockText">CLOCK</p>
+  <nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="info.html">INFO</a></li>
+      <li><a href="projects.html">PROJECTS</a></li>
+    </ul>
+    <button id="toggleNightMode" class="night-mode-btn" title="Toggle Theme">🔆</button>
+    <button id="stopButton" class="night-mode-btn" title="Toggle Animation">🍀</button>
+    <div class="mode-slider-container" id="modeSlider" data-active="off">
+        <div class="mode-slider-bg"></div>
+        <button class="mode-btn" data-mode="off" title="Hover Mode">🖱️</button>
+        <button class="mode-btn" data-mode="auto" title="Auto Draw Mode">🤖</button>
+        <button class="mode-btn" data-mode="gol" title="Game of Life Mode">🦠</button>
     </div>
-    <center>
-  <h1>
-    <p class = "maintitle">PROJECTS</p></h1>
-    <p class = "subtitle">to愛と好奇心で作られました </p>
-    <span class = "underline"><p class = "subsubtitle">UNDER CONSTRUCTION ಠಿ⁠_⁠ಠ</p></span>
-    <div id="falling-container-pages"></div>
-    </center>
+    <div class="retro-text">
+      <p id="clockText">CLOCK</p>
+    </div>
+  </nav>
+
+  <center>
+    <h1><p class="maintitle">PROJECTS</p></h1>
+    <p class="subtitle">作 品 群</p>
+    <span class="underline"><p class="subsubtitle">Creations & Experiments</p></span>
+    <p class="subtitle-text">Math • Code • Nature</p>
+        <p class="subtitle-text">Ishan Mani Singh - CODE7X Presents:</p>
+    <div class="vine1"></div>
+  </center>
+
+  <div id="falling-container-pages"></div>
+
+<div id="matrix-grid-container"></div>
+
+  <main class="projects-wrapper">
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-track">
+            <img src="solarpunk2.jpg" class="carousel-img active" alt="Project View 1">
+            <img src="solarpunk3.jpg" class="carousel-img" alt="Project View 2">
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+        <div class="project-content">
+          <div class="project-badge">placeholder</div>
+          <h2 class="project-title">Neural Lattice</h2>
+          <p class="project-kanji">神経回路網</p>
+          <p class="project-desc">
+            High-dimensional topological data visualization simulating neural growth patterns inspired by slime molds.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>PyTorch</span>
+            <span>Three.js</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="disco-button-sm">Demo</a>
+            <a href="#" class="retro-link">[ SOURCE ]</a>
+          </div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-track">
+            <img src="solarpunk4.jpg" class="carousel-img active" alt="Project View 1">
+            <img src="solarpunk5.jpg" class="carousel-img" alt="Project View 2">
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+        <div class="project-content">
+          <div class="project-badge">placeholder</div>
+          <h2 class="project-title">RL Eval Engine</h2>
+          <p class="project-kanji">強化学習</p>
+          <p class="project-desc">
+            Automated evaluation tool pipeline built to extract metrics from participant submissions and render a live HTML leaderboard.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Data Extraction</span>
+            <span>HTML</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="disco-button-sm">Demo</a>
+            <a href="#" class="retro-link">[ SOURCE ]</a>
+          </div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-track">
+            <img src="solarpunk6.jpg" class="carousel-img active" alt="Project View 1">
+            <img src="solarpunk7.jpg" class="carousel-img" alt="Project View 2">
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+        <div class="project-content">
+          <div class="project-badge">placeholder</div>
+          <h2 class="project-title">Time Capsule</h2>
+          <p class="project-kanji">タイムカプセル</p>
+          <p class="project-desc">
+            A hidden personal website serving as a digital time capsule to securely archive and explore physics theories.
+          </p>
+          <div class="project-tags">
+            <span>Web</span>
+            <span>Physics</span>
+            <span>Archive</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="disco-button-sm">Enter</a>
+            <a href="#" class="retro-link">[ SOURCE ]</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+<script src="script-pages.js"></script>
 </body>
- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script-pages.js"></script>
 </html>
