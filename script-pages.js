@@ -265,3 +265,21 @@ window.addEventListener('resize', () => {
     clearTimeout(window.resizeTimer);
     window.resizeTimer = setTimeout(createMatrixGrid, 200);
 });
+
+
+/* this is for contactss oage*/
+
+function copyText(textToCopy, button) {
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        button.innerText = 'Copied!';
+        button.classList.add('copied');
+        setTimeout(() => {
+            button.innerText = 'Copy';
+            button.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+

@@ -833,3 +833,30 @@ li a:hover {
     border-color: rgba(163, 230, 53, 0.03);
   }
 }
+
+
+.highlight-green {
+    color: #39ff14;
+    margin-right: 10px;
+}
+
+.copy-btn {
+    background-color: transparent;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #39ff14, inset 0 0 3px #39ff14; 
+}
+
+.copy-btn:hover, 
+.copy-btn.copied {
+    background-color: #39ff14;
+    color: #000; 
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
